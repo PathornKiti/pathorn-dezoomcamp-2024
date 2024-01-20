@@ -1,6 +1,6 @@
 variable "project" {
   description = "Project"
-  default     = "datacafeplayground"
+  default     = "project-name"
 }
 
 variable "region" {
