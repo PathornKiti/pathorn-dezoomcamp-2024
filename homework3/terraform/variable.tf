@@ -1,6 +1,6 @@
 variable "project" {
   description = "Project"
-  default     = "datacafeplayground"
+  default     = "xxxx"
 }
 
 variable "region" {
@@ -28,7 +28,7 @@ variable "gcs_storage_class" {
 
 variable "credentials" {
   description = "My Credentials"
-  default     = "datacafeplayground-d711426aa3fa.json"
+  default     = "xxxx"
 }
 
 variable "bq_dataset_name" {
