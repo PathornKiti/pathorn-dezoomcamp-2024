@@ -9,7 +9,7 @@ with tripdata as (
     select * 
     from {{ source('staging', 'fhv_tripdata') }}
     where dispatching_base_num is not null 
-    AND EXTRACT(YEAR FROM pickup_datetime) = 2019
+    AND EXTRACT(YEAR FROM CAST(pickup_datetime AS TIMESTAMP)) = 2019
 )
 select
     
@@ -18,8 +18,8 @@ select
     dispatching_base_num,
        
     -- timestamps
-    cast(pickup_datetime as timestamp) as pickup_datetime,
-    cast(dropOff_datetime as timestamp) as dropoff_datetime,
+    CAST(pickup_datetime AS TIMESTAMP) AS pickup_datetime,
+    CAST(dropOff_datetime AS TIMESTAMP) AS dropoff_datetime,
     
     -- trip info
     {{ dbt.safe_cast("PUlocationID", api.Column.translate_type("integer")) }} as pickup_locationid,
