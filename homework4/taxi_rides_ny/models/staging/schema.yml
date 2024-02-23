@@ -2,7 +2,7 @@ version: 2
 
 sources:
   - name: staging
-    database: qwiklabs-gcp-04-210a8bc07b32
+    database: qwiklabs-gcp-01-8f42f7c0126c
     schema: trips_data_all
 
     tables:
